@@ -10,6 +10,7 @@
 '''
 后台任务模块
 执行方法 python task.py method args1 args2 --kwargs1 val1 --kwargs2 val2
+执行task 方法如下 python task.py timer_task --task demo_task --method test
 __import__ 用法中 fromlist 参数的重要性 fromlist=True 可以引入包内模块，否则只能引用包
 '''
 
