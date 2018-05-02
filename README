@@ -1,0 +1,24 @@
+阅读项目须知
+
+项目入口
+
+web(依赖 flask)
+manager.py
+my_server.py 具体服务
+conf.py 配置读取
+
+
+task(依赖 apscheduler)
+task.py
+
+执行方法
+
+目录说明
+api 接口
+conf 配置文件信息
+dao 数据操作
+service 服务操作
+util 工具包
+task 后台任务编写
+
+
