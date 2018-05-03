@@ -38,5 +38,27 @@ def get_redis_conf():
     else:
         raise my_expect.ConfError()
 
+def get_mq_conf():
+    '''
+    获取mq 配置
+    :return:
+    '''
+    from conf import mq_conf
+    if hasattr(mq_conf, run_evn):
+        return getattr(mq_conf,run_evn)
+    else:
+        raise my_expect.ConfError()
+
+def get_mongo_conf():
+    '''
+    获取mongo 配置
+    :return:
+    '''
+    from conf import mongo_conf
+    if hasattr(mongo_conf, run_evn):
+        return getattr(mongo_conf,run_evn)
+    else:
+        raise my_expect.ConfError()
+
 if __name__ == '__main__':
     pass
