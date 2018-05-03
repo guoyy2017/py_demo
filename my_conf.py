@@ -23,7 +23,7 @@ def get_mysql_conf():
     '''
     from conf import mysql_conf
     if hasattr(mysql_conf, run_evn):
-        return mysql_conf[run_evn]
+        return getattr(mysql_conf,run_evn)
     else:
         raise my_expect.ConfError()
 
@@ -34,7 +34,7 @@ def get_redis_conf():
     '''
     from conf import redis_conf
     if hasattr(redis_conf, run_evn):
-        return redis_conf[run_evn]
+        return getattr(redis_conf,run_evn)
     else:
         raise my_expect.ConfError()
 
