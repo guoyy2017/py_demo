@@ -12,6 +12,10 @@
 执行方法 python task.py method args1 args2 --kwargs1 val1 --kwargs2 val2
 执行task 方法如下 python task.py timer_task --task demo_task --method test
 __import__ 用法中 fromlist 参数的重要性 fromlist=True 可以引入包内模块，否则只能引用包
+func.__code__.co_varnames 获取参数列表
+func.__code__.co_argcount 获取参数总数
+func.__defaults__ 获取默认值列表
+默认值后不能有没有默认值的参数存在
 '''
 
 import fire
