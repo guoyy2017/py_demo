@@ -43,9 +43,18 @@ def multi_process():
 
 def multi_thread():
     '''
-    多线程模式 thread
+    多线程模式 thread threadpool
     :return:
     '''
+    import threadpool
+    pool = threadpool.ThreadPool(num_workers=2) #工作线程数
+    params = []
+    for i in range(10):
+        params.append(i)
+    requests = threadpool.makeRequests(test, params)
+    [pool.putRequest(req) for req in requests] #具体执行
+    pool.wait() #等待结束
+    pool.dismissWorkers(num_workers=2)  #销毁池
     pass
 
 def multi_coroutine():
@@ -71,6 +80,23 @@ def multi_timer():
     apscheduler
     :return:
     '''
+    pass
+
+def multi_concurrent():
+    '''
+    多线程 多进程用法 计算密集型使用多进程，多线程效果不佳，还会变慢
+    from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor, Executor
+    multiprocessing开销比较大，原因就在于：主进程和子进程之间通信，必须进行序列化和反序列化的操作
+    https://www.cnblogs.com/kangoroo/p/7628092.html
+    '''
+    from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor, Executor
+    #多线程
+    pool = ThreadPoolExecutor(max_workers=2) #最大工作线程数
+    res = pool.map(test, (1,2,3)) #执行
+    #多进程
+    pool = ProcessPoolExecutor(max_workers=2) #最大工作进程数
+    res = pool.map(test, (1, 2, 3))  # 执行
+
     pass
 
 if __name__ == '__main__':

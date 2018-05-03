@@ -11,5 +11,26 @@
 redis 配置信息
 '''
 
+DEV={
+    'host':'dev',
+    'auth':'dev',
+    'port':6379,
+    'db':0,
+}
+
+TEST={
+    'host':'test',
+    'auth':'test',
+    'port':6379,
+    'db':0,
+}
+
+PROD={
+    'host':'prod',
+    'auth':'prod',
+    'port':6379,
+    'db':0,
+}
+
 if __name__ == '__main__':
     pass
