@@ -14,5 +14,14 @@
 class ConfError(Exception):
     pass
 
+class ApiError(Exception):
+    pass
+
+class DBError(Exception):
+    pass
+
+class TaskError(Exception):
+    pass
+
 if __name__ == '__main__':
     pass
