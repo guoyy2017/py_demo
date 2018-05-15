@@ -8,7 +8,7 @@
 '''
 
 import os
-import my_expect
+import my_except
 
 #APP 名称
 APP_NAME = 'DEMO'
@@ -25,7 +25,7 @@ def get_mysql_conf():
     if hasattr(mysql_conf, run_evn):
         return getattr(mysql_conf,run_evn)
     else:
-        raise my_expect.ConfError()
+        raise my_except.ConfError()
 
 def get_redis_conf():
     '''
@@ -36,7 +36,7 @@ def get_redis_conf():
     if hasattr(redis_conf, run_evn):
         return getattr(redis_conf,run_evn)
     else:
-        raise my_expect.ConfError()
+        raise my_except.ConfError()
 
 def get_mq_conf():
     '''
@@ -47,7 +47,7 @@ def get_mq_conf():
     if hasattr(mq_conf, run_evn):
         return getattr(mq_conf,run_evn)
     else:
-        raise my_expect.ConfError()
+        raise my_except.ConfError()
 
 def get_mongo_conf():
     '''
@@ -58,7 +58,7 @@ def get_mongo_conf():
     if hasattr(mongo_conf, run_evn):
         return getattr(mongo_conf,run_evn)
     else:
-        raise my_expect.ConfError()
+        raise my_except.ConfError()
 
 if __name__ == '__main__':
     pass
